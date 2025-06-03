@@ -1,0 +1,209 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Packages - EventEase</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      padding-top: 80px; /* space for sticky header */
+    }
+
+    /* Sticky Header */
+    .sticky-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    /* Centered Heading */
+    .center {
+      text-align: center;
+      font-size: 28px;
+      margin: 30px 0 20px;
+      color: #2c3e50;
+    }
+
+    /* Packages Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      padding: 20px 40px;
+    }
+
+    /* Individual Package Card */
+    .menu-item {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .menu-item h3 {
+      font-size: 20px;
+      margin: 15px 0 8px;
+      text-align: center;
+      color: #34495e;
+    }
+
+    .menu-item p {
+      font-size: 15px;
+      padding: 0 15px;
+      text-align: center;
+      color: #555;
+    }
+
+    /* Buttons */
+    .menu-item button {
+      display: block;
+      margin: 0 auto;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .menu-item button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="logo">EventEase</div>
+    <nav>
+      <ul>
+        <li><a href="./dashboard.html">Home</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2 class="center">Our Event Packages</h2>
+
+  <section class="menu-grid">
+    <div class="menu-item">
+      <img src="birth.jpg" alt="Birthday Event">
+      <h3>Birthday Party</h3>
+      <p>Fun-filled package with cake, games & decoration</p>
+      <button onclick="window.location.href='birthday.php'">View Details</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="wed.jpeg" alt="Wedding Event">
+      <h3>Wedding</h3>
+      <p>Grand decoration, catering, music & venue</p>
+      <button onclick="window.location.href='wed.php'">View Details</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="cor.jpeg" alt="Corporate Event">
+      <h3>Corporate Event</h3>
+      <p>Professional setup with AV, snacks & transport</p>
+      <button onclick="window.location.href='cor.php'">View Details</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="custom.jpg" alt="Custom Event">
+      <h3>Custom Event</h3>
+      <p>You design it, we execute it — your way</p>
+      <button onclick="window.location.href='cus.php'">View Details</button>
+    </div>
+
+    <div class="menu-item">
+      <img src="college.jpeg" alt="College Event">
+      <h3>College Event</h3>
+      <p>Stage, sound, lights, fun games, and food stalls</p>
+      <button onclick="window.location.href='clg.php'">View Details</button>
+    </div>
+  </section>
+  <section id="about" style="background-color: #ffe6f0; padding: 60px 20px; text-align: center;">
+  <h2 style="color: #c0397e; font-size: 28px;">About EventEase</h2>
+  <p style="max-width: 800px; margin: 20px auto; font-size: 17px; color: #444;">
+    EventEase is your trusted partner for crafting magical birthday experiences. Whether it's a princess theme, a jungle adventure,
+    or a superhero showdown — we bring your child's dream party to life. With top-tier decoration, entertainment, catering,
+    and more, we ensure your event is fun-filled and hassle-free!
+  </p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" style="background-color: #ffffff; padding: 60px 20px; text-align: center;">
+  <h2 style="color: #2c3e50; font-size: 28px;">Contact Us</h2>
+  <p style="max-width: 800px; margin: 20px auto; font-size: 17px; color: #444;">
+    Have a question or ready to plan your perfect party? We're just a message away!
+  </p>
+  <p style="color: #2c3e50; font-size: 18px;">
+    <strong>Email:</strong> info@eventease.com <br>
+    <strong>Phone:</strong> +91-9876543210
+  </p>
+</section>
+
+  <script>
+    function viewDetails(eventType) {
+      alert("Viewing details for " + eventType);
+      // You can redirect to respective pages here in future
+    }
+  </script>
+</body>
+</html>

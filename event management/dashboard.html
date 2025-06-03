@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EventEase - Event Management</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #fff8f0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      10% { transform: translate(-1px, -2px) rotate(-1deg); }
+      20% { transform: translate(-3px, 0px) rotate(1deg); }
+      30% { transform: translate(3px, 2px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(-1px, 2px) rotate(-1deg); }
+      60% { transform: translate(-3px, 1px) rotate(0deg); }
+      70% { transform: translate(3px, 1px) rotate(-1deg); }
+      80% { transform: translate(-1px, -1px) rotate(1deg); }
+      90% { transform: translate(1px, 2px) rotate(0deg); }
+      100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+      animation: shake 2s infinite;
+    }
+
+    .sticky-header {
+      background-color: #f7a500;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #000;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('d.jpg') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+      padding: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      animation: slideUp 1s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      animation: slideUp 1.5s ease-in-out;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: #e63946;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #d62828;
+    }
+
+    .popular {
+      padding: 60px 30px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .popular h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .dish-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .dish {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s;
+    }
+
+    .dish:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .dish img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .dish-info {
+      padding: 15px;
+    }
+
+    .dish-info h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+      color: #222;
+    }
+
+    .dish-info p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky-header">
+    <div class="logo">EventEase</div>
+    <nav>
+      <ul>
+        <li><a href="./dashboard.html">Home</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to EventEase</h1>
+    <p>Seamlessly plan your perfect event, effortlessly.</p>
+    <a href="event.html" class="btn">Explore Event</a>
+  </section>
+
+  <section class="popular">
+    <h2>Our Event Services</h2>
+    <div class="dish-grid">
+      <div class="dish">
+        <img src="e plan.jpg" alt="Event Planning" />
+        <div class="dish-info">
+          <h3>Event Planning</h3>
+          <p>Perfectly tailored events to suit your style</p>
+        </div>
+      </div>
+
+      <div class="dish">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Catering" />
+        <div class="dish-info">
+          <h3>Catering</h3>
+          <p>Delicious food for your guests</p>
+        </div>
+      </div>
+
+      <div class="dish">
+        <img src="deco.jpg" alt="Decorations" />
+        <div class="dish-info">
+          <h3>Event Decorations</h3>
+          <p>Transform your venue with stunning decor</p>
+        </div>
+      </div>
+
+      <div class="dish">
+        <img src="enter.jpg" alt="Entertainment" />
+        <div class="dish-info">
+          <h3>Entertainment</h3>
+          <p>Keep your guests entertained all night</p>
+        </div>
+      </div>
+
+      <div class="dish">
+        <img src="photo.jpg" alt="Photography" />
+        <div class="dish-info">
+          <h3>Photography</h3>
+          <p>Capture unforgettable moments</p>
+        </div>
+      </div>
+
+      <div class="dish">
+        <img src="trans.jpg" alt="Transportation" />
+        <div class="dish-info">
+          <h3>Transportation</h3>
+          <p>Get your guests to the event in style</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section -->
+<section id="about" style="background-color: #ffe6f0; padding: 60px 20px; text-align: center;">
+  <h2 style="color: #c0397e; font-size: 28px;">About EventEase</h2>
+  <p style="max-width: 800px; margin: 20px auto; font-size: 17px; color: #444;">
+    EventEase is your trusted partner for crafting magical birthday experiences. Whether it's a princess theme, a jungle adventure,
+    or a superhero showdown — we bring your child's dream party to life. With top-tier decoration, entertainment, catering,
+    and more, we ensure your event is fun-filled and hassle-free!
+  </p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" style="background-color: #ffffff; padding: 60px 20px; text-align: center;">
+  <h2 style="color: #2c3e50; font-size: 28px;">Contact Us</h2>
+  <p style="max-width: 800px; margin: 20px auto; font-size: 17px; color: #444;">
+    Have a question or ready to plan your perfect party? We're just a message away!
+  </p>
+  <p style="color: #2c3e50; font-size: 18px;">
+    <strong>Email:</strong> info@eventease.com <br>
+    <strong>Phone:</strong> +91-9876543210
+  </p>
+</section>
+
+</body>
+</html>
